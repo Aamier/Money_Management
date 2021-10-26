@@ -10,8 +10,23 @@ import { ILogin } from '../Models/loginModel';
 export class AuthService {
 
   constructor(private http: HttpClient) { }
+  getAuthToken(): string | null {
+    return sessionStorage.getItem('token');
+  }
 
   login(values: ILogin): Observable<any> {
-    return this.http.post<any>(environment.baseUrl + 'auth/create', values)
+    return this.http.post<any>(environment.baseUrl + 'auth/create', values);
+  }
+
+  getUserById(userId: number): Observable<any> {
+    return this.http.get<any>(environment.baseUrl + 'user/' + userId);
+  }
+
+  getMasjidByOrg(orgId: number): Observable<any> {
+    return this.http.get<any>(environment.baseUrl + 'masjid?org=' + orgId);
+  }
+
+  userMe(): Observable<any> {
+    return this.http.get<any>(environment.baseUrl + 'users/me');
   }
 }
