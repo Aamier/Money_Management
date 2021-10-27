@@ -10,9 +10,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ApplicationInterceptorService } from './services/application-interceptor.service';
-import {ToastModule} from 'primeng/toast';
-import { RippleModule } from 'primeng/ripple';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { SharedModule } from './shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -27,8 +27,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
     ReactiveFormsModule,
     HttpClientModule,
     NgxSpinnerModule,
-    ToastModule,
-    RippleModule 
+    SharedModule
   ],
   providers: [ConfirmationService, MessageService, {
     provide: HTTP_INTERCEPTORS, useClass: ApplicationInterceptorService, multi: true

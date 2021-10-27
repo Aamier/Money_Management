@@ -1,1 +1,14 @@
-<p>home works!</p>
+<p-menubar [model]="items">
+    <ng-template pTemplate="start">
+        <h3 class="d-flex align-items-center"><img src="assets/Images/masjid_logo.png" height="40" class="mr-4">
+        Al-Masjid</h3>
+    </ng-template>
+    <ng-template pTemplate="end">
+        <a class="p-menuitem p-menuitem-link" (click)="showBasicDialog()">
+            <span class="p-menuitem-icon pi pi-fw pi-power-off"></span>Quit</a>
+    </ng-template>
+</p-menubar>
+
+<ng-container *ngIf="confirmationDialogData?.showDialog">
+    <app-confirmation-dialog [dialogParams]="confirmationDialogData" (confirmationResult)="eventConfirmation($event)"></app-confirmation-dialog>
+</ng-container>
