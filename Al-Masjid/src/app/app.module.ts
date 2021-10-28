@@ -12,6 +12,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { ApplicationInterceptorService } from './services/application-interceptor.service';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { SharedModule } from './shared/shared.module';
+import { ReceiptsModule } from './receipts/receipts.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { SharedModule } from './shared/shared.module';
     ReactiveFormsModule,
     HttpClientModule,
     NgxSpinnerModule,
-    SharedModule
+    SharedModule,
+    ReceiptsModule
   ],
   providers: [ConfirmationService, MessageService, {
     provide: HTTP_INTERCEPTORS, useClass: ApplicationInterceptorService, multi: true

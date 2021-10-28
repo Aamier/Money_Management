@@ -4,7 +4,7 @@
         Al-Masjid</h3>
     </ng-template>
     <ng-template pTemplate="end">
-        <a class="p-menuitem p-menuitem-link" (click)="showBasicDialog()">
+        <a class="p-menuitem p-menuitem-link" (click)="showconfirmationDialog()">
             <span class="p-menuitem-icon pi pi-fw pi-power-off"></span>Quit</a>
     </ng-template>
 </p-menubar>
@@ -12,3 +12,13 @@
 <ng-container *ngIf="confirmationDialogData?.showDialog">
     <app-confirmation-dialog [dialogParams]="confirmationDialogData" (confirmationResult)="eventConfirmation($event)"></app-confirmation-dialog>
 </ng-container>
+
+<ng-container *ngIf="masjidDialogData?.showDialog">
+    <app-select-masjid [dialogParams]="masjidDialogData"></app-select-masjid>
+</ng-container>
+
+<ng-container *ngIf="newReceipt">
+    <app-new-receipt></app-new-receipt>
+</ng-container>
+
+

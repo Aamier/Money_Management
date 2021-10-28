@@ -1,0 +1,13 @@
+<p-dialog header="Add New Receipt"  [(visible)]="show" [style]="{width: '30vw'}" [modal]="true"  [baseZIndex]="10000"
+[draggable]="false" [resizable]="true" [closeOnEscape]="false" [closable]="true">
+
+<div class="row">
+    <div class="p-field col-12">
+        <label for="Amount">Indian Locale</label>
+        <p-inputNumber mode="currency" currency="INR" inputId="Amount" locale="en-IN"></p-inputNumber>
+    </div>
+</div>
+    <!-- <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check"  styleClass="p-button-secondary" label="Yes"></p-button>
+    </ng-template> -->
+</p-dialog>
