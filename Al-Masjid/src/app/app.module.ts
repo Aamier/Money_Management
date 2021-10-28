@@ -13,6 +13,7 @@ import { ApplicationInterceptorService } from './services/application-intercepto
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { SharedModule } from './shared/shared.module';
 import { ReceiptsModule } from './receipts/receipts.module';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ReceiptsModule } from './receipts/receipts.module';
     HttpClientModule,
     NgxSpinnerModule,
     SharedModule,
-    ReceiptsModule
+    ReceiptsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [ConfirmationService, MessageService, {
     provide: HTTP_INTERCEPTORS, useClass: ApplicationInterceptorService, multi: true
