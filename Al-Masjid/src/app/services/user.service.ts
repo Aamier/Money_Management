@@ -7,11 +7,15 @@ import { ApiService } from './api-service';
 @Injectable({
   providedIn: 'root'
 })
-export class OrgService {
+export class UserService {
 
   constructor(private http: HttpClient, private apiService: ApiService) { }
 
-  getMasjidByOrg(orgId: number): Observable<any> {
-    return this.http.get<any>(this.apiService.ORGBYMASJID + orgId);
+  getUserById(userId: number): Observable<any> {
+    return this.http.get<any>(this.apiService.USER + '/' + userId);
+  }
+
+  userMe(): Observable<any> {
+    return this.http.get<any>(this.apiService.USER + 's/me');
   }
 }

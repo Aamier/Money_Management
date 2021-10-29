@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <h3 class="tableTitle">Received Payments</h3>
+                <p-table [value]="receiptsDataSource" responsiveLayout="scroll">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th pSortableColumn="id">Id <p-sortIcon field="id"></p-sortIcon></th>
+                            <th pSortableColumn="created_on">Date<p-sortIcon field="created_on"></p-sortIcon></th>
+                            <th pSortableColumn="created_on">Time<p-sortIcon field="created_on"></p-sortIcon></th>
+                            <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+                            <th>Notes</th>
+                            <th pSortableColumn="amount">Amount <p-sortIcon field="amount"></p-sortIcon></th>
+                            <th>Actions</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-product>
+                        <tr>
+                            <td>{{product.id}}</td>
+                            <td>{{product.created_on | date: 'dd-mm-yyyy'}}</td>
+                            <td>{{product.created_on | date: 'hh-mm-ss a'}}</td>
+                            <td>{{product.name}}</td>
+                            <td>NA</td>
+                            <td>{{product.amount}}</td>
+                            <td>
+                                <i class="pi pi-pencil mr-10px"></i>
+                                <i class="pi pi-trash"></i>
+                            </td>
+                        </tr>
+                    </ng-template>
+
+                    <ng-template pTemplate="summary">
+                        Footer
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+    </div>
+</div>

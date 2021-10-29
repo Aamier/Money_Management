@@ -8,8 +8,14 @@ const routes: Routes = [
     path: '', component: LoginComponent
   },
   {
-    path: 'home', component: HomeComponent
-  }
+    path: 'app', component: HomeComponent,
+    children: [
+      {
+        path: 'receipts', 
+        loadChildren: () => import('./receipts/receipts.module').then(m => m.ReceiptsModule)
+      }
+    ]
+  },
 ];
 
 @NgModule({

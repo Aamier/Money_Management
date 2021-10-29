@@ -18,7 +18,8 @@
 </ng-container>
 
 <ng-container *ngIf="newReceipt">
-    <app-new-receipt></app-new-receipt>
+    <app-new-receipt (recieptSaved)="event_recieptSaved($event)"></app-new-receipt>
 </ng-container>
-
-
+<div class="mt-4">
+    <router-outlet></router-outlet>
+</div>

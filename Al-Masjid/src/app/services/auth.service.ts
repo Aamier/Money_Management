@@ -3,30 +3,19 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ILogin } from '../Models/loginModel';
+import { ApiService } from './api-service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private apiService: ApiService) { }
   getAuthToken(): string | null {
     return sessionStorage.getItem('token');
   }
 
   login(values: ILogin): Observable<any> {
-    return this.http.post<any>(environment.baseUrl + 'auth/create', values);
-  }
-
-  getUserById(userId: number): Observable<any> {
-    return this.http.get<any>(environment.baseUrl + 'user/' + userId);
-  }
-
-  getMasjidByOrg(orgId: number): Observable<any> {
-    return this.http.get<any>(environment.baseUrl + 'masjid?org=' + orgId);
-  }
-
-  userMe(): Observable<any> {
-    return this.http.get<any>(environment.baseUrl + 'users/me');
+    return this.http.post<any>(this.apiService.LOGIN, values);
   }
 }

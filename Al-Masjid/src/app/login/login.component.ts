@@ -19,14 +19,15 @@ export class LoginComponent implements OnInit, OnDestroy {
      private router: Router, private spinner: NgxSpinnerService, private messageService: MessageService, private primengConfig: PrimeNGConfig) { }
 
   ngOnInit(): void {
+    // sessionStorage.clear();
     this.primengConfig.ripple = true;
     this.initForm();
   }
 
   initForm() {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+      email: ['mohammed.ameer@test.com', Validators.required],
+      password: ['123456789', Validators.required]
     })
   }
 
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       this.authService.login(this.loginForm.value).subscribe(
         success => {
           sessionStorage.setItem('token', success.access);
-          this.router.navigateByUrl("home");
+          this.router.navigateByUrl("app");
           this.spinner.hide();
           this.messageService.add({severity:'success', summary: 'Success', detail: 'Welcome Back'});
         }

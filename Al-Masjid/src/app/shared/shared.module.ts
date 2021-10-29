@@ -9,6 +9,8 @@ import { RippleModule } from 'primeng/ripple';
 import { SelectMasjidComponent } from './select-masjid/select-masjid.component';
 import {DropdownModule} from 'primeng/dropdown';
 import {InputNumberModule} from 'primeng/inputnumber';
+import {InputTextModule} from 'primeng/inputtext';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {InputNumberModule} from 'primeng/inputnumber';
     ButtonModule,
     ToastModule,
     DropdownModule,
-    InputNumberModule
+    InputNumberModule,
+    InputTextModule,
+    TableModule
   ],
   exports: [
     RippleModule,
@@ -34,7 +38,10 @@ import {InputNumberModule} from 'primeng/inputnumber';
     DropdownModule,
     ConfirmationDialogComponent,
     SelectMasjidComponent,
-    InputNumberModule
+    InputNumberModule,
+    InputTextModule,
+    TableModule
+    
   ]
 })
 export class SharedModule { }

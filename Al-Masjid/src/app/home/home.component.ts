@@ -6,6 +6,8 @@ import { NEVER, never } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { IConfirmationDialog } from '../Models/generalModel';
 import { AuthService } from '../services/auth.service';
+import { OrgService } from '../services/org.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +21,7 @@ export class HomeComponent implements OnInit {
   confirmationDialogData!: IConfirmationDialog;
   masjidDialogData!: IConfirmationDialog;
   newReceipt = false;
-  constructor(private authService: AuthService, private router: Router,private spinner: NgxSpinnerService) { }
+  constructor(private orgService: OrgService, private userService: UserService, private router: Router,private spinner: NgxSpinnerService) { }
   ngOnInit(): void {
     this.items = [
       {
@@ -35,7 +37,8 @@ export class HomeComponent implements OnInit {
           },
           {
             label: 'Manage Receipts',
-            icon: 'pi pi-fw pi-list'
+            icon: 'pi pi-fw pi-list',
+            routerLink: 'receipts'
           }
         ]
       },
@@ -67,9 +70,9 @@ export class HomeComponent implements OnInit {
 
   getInfo() {
     this.spinner.show();
-    this.authService.userMe().pipe(switchMap((res: any) => {
+    this.userService.userMe().pipe(switchMap((res: any) => {
       sessionStorage.setItem('userId', res.id);
-      return this.authService.getMasjidByOrg(res.org);
+      return this.orgService.getMasjidByOrg(res.org);
     })).subscribe((success: any) => {
         this.masjidDialogData = {
           message: '',
@@ -95,6 +98,10 @@ export class HomeComponent implements OnInit {
 
   logout() {
     this.router.navigateByUrl('');
+  }
+
+  event_recieptSaved(value: boolean) {
+    this.newReceipt = false;
   }
 
 }
