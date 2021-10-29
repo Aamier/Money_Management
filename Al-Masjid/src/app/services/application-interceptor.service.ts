@@ -26,7 +26,7 @@ export class ApplicationInterceptorService implements HttpInterceptor{
         catchError((err: HttpErrorResponse) => {
           console.log('error', err);
           this.spinner.hide();
-            this.messageService.add({severity:'error', summary: 'Error', detail: err.message});
+            this.messageService.add({severity:'error', summary: 'Error', detail: err.error?.detail});
           return throwError(err.error);
         })
       )
