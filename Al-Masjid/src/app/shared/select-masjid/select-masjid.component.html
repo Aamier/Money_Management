@@ -1,0 +1,18 @@
+<p-dialog header="Select Your Masjid"  [(visible)]="dialogParams.showDialog" [style]="{width: '30vw'}" [modal]="true"  [baseZIndex]="10000"
+[draggable]="false" [resizable]="true" [closeOnEscape]="false" [closable]="false">
+
+<p-dropdown 
+[options]="dialogParams.data" 
+placeholder="Select Masjid" 
+[virtualScroll]="true" 
+[itemSize]="10" 
+[filter]="false" 
+styleClass="w-100" 
+[required]="true"
+optionLabel="name" optionValue="org" (onChange)="selectedMasjid($event)">
+</p-dropdown>
+
+    <!-- <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check"  styleClass="p-button-secondary" label="Yes"></p-button>
+    </ng-template> -->
+</p-dialog>

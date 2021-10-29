@@ -1,0 +1,8 @@
+<p-dialog header="Long Content"  [(visible)]="dialogParams.showDialog" [style]="{width: '30vw'}" [modal]="true"  [baseZIndex]="10000"
+[draggable]="false" [resizable]="false">
+    <p>{{dialogParams.message}}</p>
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check"  styleClass="p-button-secondary" label="Yes" (click)="hideDialog(true)"></p-button>
+        <p-button icon="pi pi-times" (click)="hideDialog(false)" label="Cancel" styleClass="p-button-danger"></p-button>
+    </ng-template>
+</p-dialog>

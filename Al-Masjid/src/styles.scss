@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~ngx-toastr/toastr';
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+@import "/src/sass/variables";
+
+.btn-primary {
+    background-color: $blue !important;
+
+    &:hover {
+        background-color: #14867F !important;
+    }
+}
+
+h1,h2,h3,h4,h5,h6 {
+    // font-family: 'Roboto', sans-serif;
+    font-family: 'Zen Kurenaido', sans-serif;
+}
+
+.label {
+    font-family: 'Zen Kurenaido', sans-serif;
+}
