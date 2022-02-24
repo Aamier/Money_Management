@@ -1,0 +1,33 @@
+{
+    "welcomeMessage": "Welcome Back!",
+    "New": "New",
+    "Profile": "Profile",
+    "Quit": "Quit",
+    "Name": "Name",
+    "Amount": "Amount",
+    "Notes": "Notes",
+    "Save": "Save",
+    "id": "Id",
+    "Date": "Date",
+    "Time": "Time",
+    "Actions": "Actions",
+    "login": {
+      "username": "User Name",
+      "password": "Passwords",
+      "submit": "Submit"
+    },
+    "HomeMenu": {
+        "Receipts": "Receipts",
+        "ManageReceipts": "Manage Receipts",
+        "Payments": "Payments",
+        "ManagePayments": "Manage Payments",
+        "Ledger": "Ledger"
+    },
+    "Receipts": {
+        "AddNewReceipts": "Add New Receipt",
+        "PayModeTitle": "Select Payment Mode"
+    },
+    "ReceiptsGrid": {
+        "Title": "Received Payments"
+    }
+  }

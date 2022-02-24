@@ -12,3 +12,8 @@ export interface IReceipt {
     received_by: number;
     masjid: number;
 }
+
+export interface IStorage {
+    key: string,
+    value: string
+}

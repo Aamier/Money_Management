@@ -1,33 +1,33 @@
-<p-dialog header="Add New Receipt" [(visible)]="show" [style]="{width: '30vw'}" [modal]="true" [baseZIndex]="10000"
+<p-dialog header="{{'Receipts.AddNewReceipts' | translate}}" [(visible)]="show" [style]="{width: '30vw'}" [modal]="true" [baseZIndex]="10000"
     [draggable]="false" [resizable]="true" [closeOnEscape]="false" [closable]="true" (onHide)="save(false)">
 
     <ng-container [formGroup]="payForm">
         <div class="row">
             <div class="col-12 mb-3">
-                <p class="p-b">Name</p>
+                <p class="p-b">{{'Name' | translate}}</p>
                 <input type="text" pInputText formControlName="name" />
             </div>
 
             <div class="col-12 mb-3">
-                <p class="p-b">Amount</p>
+                <p class="p-b">{{'Amount' | translate}}</p>
                 <p-inputNumber mode="currency" class="w-100" currency="INR" formControlName="amount" inputId="Amount"
                     locale="en-IN"></p-inputNumber>
             </div>
 
             <div class="col-12 mb-3">
-                <p-dropdown formControlName="payment_mode" [options]="payModeData" placeholder="Select Payment Mode"
+                <p-dropdown formControlName="payment_mode" [options]="payModeData" placeholder="{{'Receipts.PayModeTitle' | translate}}"
                     [virtualScroll]="true" [itemSize]="10" [filter]="false" styleClass="w-100" [required]="true"
                     optionLabel="name" optionValue="id">
                 </p-dropdown>
             </div>
 
             <div class="col-12 mb-3">
-                <p class="p-b">Notes</p>
+                <p class="p-b">{{'Notes' | translate}}</p>
                 <input type="text" pInputText />
             </div>
 
             <div class="col-4">
-                <button class="btn btn-block btn-primary" (click)="save(true)" [disabled]="!payForm.valid">Save</button>
+                <button class="btn btn-block btn-primary" (click)="save(true)" [disabled]="!payForm.valid">{{'Save' | translate }}</button>
             </div>
         </div>
     </ng-container>

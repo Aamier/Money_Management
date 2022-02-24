@@ -1,10 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { MessageService, PrimeNGConfig } from 'primeng/api';
+import { MenuItem, MessageService, PrimeNGConfig } from 'primeng/api';
 import { Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { LanguageUtilService } from '../language-util.service';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -15,11 +17,15 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent implements OnInit, OnDestroy {
   subScription = new Subscription();
   loginForm!: FormGroup;
+  items: MenuItem[];
   constructor(private formBuilder: FormBuilder, private authService: AuthService,
-     private router: Router, private spinner: NgxSpinnerService, private messageService: MessageService, private primengConfig: PrimeNGConfig) { }
+     private router: Router, private spinner: NgxSpinnerService, private messageService: MessageService,
+     private primengConfig: PrimeNGConfig, private translate: LanguageUtilService) { 
+       this.items = []
+     }
 
   ngOnInit(): void {
-    // sessionStorage.clear();
+    //sessionStorage.clear();
     this.primengConfig.ripple = true;
     this.initForm();
   }
@@ -43,6 +49,10 @@ export class LoginComponent implements OnInit, OnDestroy {
         }
       )
     )
+  }
+
+  changeLanguage() {
+    this.translate.changeLanguage();
   }
 
   ngOnDestroy(): void {

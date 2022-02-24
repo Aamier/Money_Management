@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { MenuItem } from 'primeng/api';
 import { NEVER, never } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { LanguageUtilService } from '../language-util.service';
 import { IConfirmationDialog } from '../Models/generalModel';
 import { AuthService } from '../services/auth.service';
 import { OrgService } from '../services/org.service';
@@ -21,68 +23,82 @@ export class HomeComponent implements OnInit {
   confirmationDialogData!: IConfirmationDialog;
   masjidDialogData!: IConfirmationDialog;
   newReceipt = false;
-  constructor(private orgService: OrgService, private userService: UserService, private router: Router,private spinner: NgxSpinnerService) { }
+  userId!: string | null;
+  constructor(private orgService: OrgService, private userService: UserService, private router: Router,private spinner: NgxSpinnerService, 
+    private translate: LanguageUtilService, private languageService: TranslateService) { 
+    this.userId = sessionStorage.getItem('userId');
+  }
+
   ngOnInit(): void {
-    this.items = [
+    this.languageService.onLangChange.subscribe( s => {
+      debugger
+      this.items = this.buildMenu();
+    });
+    this.getInfo();
+    //this.items = this.buildMenu();
+  }
+
+  buildMenu(): MenuItem[] {
+    return [
       {
-        label: 'Receipts',
+        label: this.languageService.instant("HomeMenu.Receipts"),
         icon: 'pi pi-fw pi-wallet',
         items: [
           {
-            label: 'New',
+            label: this.languageService.instant("New"),
             icon: 'pi pi-fw pi-dollar',
             command: (event) => {
               this.newReceipt = true;
             }
           },
           {
-            label: 'Manage Receipts',
+            label: this.languageService.instant("HomeMenu.ManageReceipts"),
             icon: 'pi pi-fw pi-list',
             routerLink: 'receipts'
           }
         ]
       },
       {
-        label: 'Payments',
+        label: this.languageService.instant("HomeMenu.Payments"),
         icon: 'pi pi-fw pi-dollar',
         items: [
           {
-            label: 'New',
+            label: this.languageService.instant("New"),
             icon: 'pi pi-fw pi-dollar'
           },
           {
-            label: 'Manage Payments',
+            label: this.languageService.instant("HomeMenu.ManagePayments"),
             icon: 'pi pi-fw pi-list'
           }
         ]
       },
       {
-        label: 'Ledger',
+        label: this.languageService.instant("HomeMenu.Ledger"),
         icon: 'pi pi-fw pi-calendar',
       },
       {
-        label: 'Profile',
+        label: this.languageService.instant("Profile"),
         icon: 'pi pi-fw pi-users'
       }
     ];
-    this.getInfo();
   }
 
   getInfo() {
-    this.spinner.show();
-    this.userService.userMe().pipe(switchMap((res: any) => {
-      sessionStorage.setItem('userId', res.id);
-      return this.orgService.getMasjidByOrg(res.org);
-    })).subscribe((success: any) => {
-        this.masjidDialogData = {
-          message: '',
-          showDialog: true,
-          data: success
+    if(this.userId === null) {
+      this.spinner.show();
+      this.userService.userMe().pipe(switchMap((res: any) => {
+        sessionStorage.setItem('userId', res.id);
+        return this.orgService.getMasjidByOrg(res.org);
+      })).subscribe((success: any) => {
+          this.masjidDialogData = {
+            message: '',
+            showDialog: true,
+            data: success
+          }
+          this.spinner.hide();
         }
-        console.log('est', success);
-        this.spinner.hide();
-      }
-    );
+      );
+    }
   }
 
   showconfirmationDialog() {
@@ -102,6 +118,10 @@ export class HomeComponent implements OnInit {
 
   event_recieptSaved(value: boolean) {
     this.newReceipt = false;
+  }
+
+  changeLanguage() {
+    this.translate.changeLanguage();
   }
 
 }

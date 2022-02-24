@@ -30,6 +30,8 @@ export class ApplicationInterceptorService implements HttpInterceptor{
           return throwError(err.error);
         })
       )
+   } else {
+    return next.handle(req);
    }
   }
 }

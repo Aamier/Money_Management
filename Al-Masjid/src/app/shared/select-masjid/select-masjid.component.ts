@@ -15,6 +15,7 @@ export class SelectMasjidComponent implements OnInit {
   selectedMasjid(event:any) {
     this.dialogParams.showDialog = false;
     sessionStorage.setItem('org', event.value);
+    sessionStorage.setItem('name', event);
 
   }
 

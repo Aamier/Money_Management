@@ -11,7 +11,9 @@ import {DropdownModule} from 'primeng/dropdown';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {InputTextModule} from 'primeng/inputtext';
 import {TableModule} from 'primeng/table';
-
+import { SlideMenuModule } from 'primeng/slidemenu';
+import {DockModule} from 'primeng/dock';
+import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   declarations: [
     ConfirmationDialogComponent,
@@ -40,8 +42,10 @@ import {TableModule} from 'primeng/table';
     SelectMasjidComponent,
     InputNumberModule,
     InputTextModule,
-    TableModule
-    
+    TableModule,
+    SlideMenuModule,
+    DockModule,
+    TranslateModule
   ]
 })
 export class SharedModule { }

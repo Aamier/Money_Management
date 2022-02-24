@@ -25,3 +25,7 @@
         padding: 25px;
     }
 }
+
+:host ::ng-deep .ui-menubar .ui-menubar-root-list {
+    float: right;
+  }

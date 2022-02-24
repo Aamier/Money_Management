@@ -4,8 +4,14 @@
         Al-Masjid</h3>
     </ng-template>
     <ng-template pTemplate="end">
+        <div class="d-flex">
+            <a class="d-flex align-items-center" (click)="changeLanguage()">
+                <img src="assets/Images/ar.png" height="40" class="mr-4">
+            </a>
+
         <a class="p-menuitem p-menuitem-link" (click)="showconfirmationDialog()">
-            <span class="p-menuitem-icon pi pi-fw pi-power-off"></span>Quit</a>
+            <span class="p-menuitem-icon pi pi-fw pi-power-off"></span>{{ 'Quit' | translate }}</a>
+        </div>
     </ng-template>
 </p-menubar>
 

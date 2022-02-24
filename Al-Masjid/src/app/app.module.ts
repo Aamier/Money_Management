@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ApplicationInterceptorService } from './services/application-interceptor.service';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { SharedModule } from './shared/shared.module';
 import { ReceiptsModule } from './receipts/receipts.module';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 
 @NgModule({
@@ -29,7 +35,16 @@ import { ReceiptsModule } from './receipts/receipts.module';
     HttpClientModule,
     NgxSpinnerModule,
     SharedModule,
-    ReceiptsModule
+    ReceiptsModule,
+    TranslateModule.forRoot(
+      {
+        loader: {
+          provide: TranslateLoader,
+            useFactory: HttpLoaderFactory,
+            deps: [HttpClient]
+        }
+      }
+    )
   ],
   providers: [ConfirmationService, MessageService, {
     provide: HTTP_INTERCEPTORS, useClass: ApplicationInterceptorService, multi: true

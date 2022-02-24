@@ -29,7 +29,7 @@ export class NewReceiptComponent implements OnInit {
       name: ['', Validators.required],
       amount: [null, Validators.required],
       created_on: [new Date()],
-      updated_on: [new Date()],
+      updated_on: [null],
       payment_mode: [null, Validators.required],
       received_by: [sessionStorage.getItem('userId')],
       masjid: [sessionStorage.getItem('org'), Validators.required]
