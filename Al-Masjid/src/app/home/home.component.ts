@@ -1,13 +1,12 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { MenuItem } from 'primeng/api';
-import { NEVER, never } from 'rxjs';
+import { NEVER } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { LanguageUtilService } from '../language-util.service';
 import { IConfirmationDialog } from '../Models/generalModel';
-import { AuthService } from '../services/auth.service';
 import { OrgService } from '../services/org.service';
 import { UserService } from '../services/user.service';
 
@@ -35,7 +34,7 @@ export class HomeComponent implements OnInit {
       this.items = this.buildMenu();
     });
     this.getInfo();
-    //this.items = this.buildMenu();
+    this.items = this.buildMenu();
   }
 
   buildMenu(): MenuItem[] {
@@ -63,12 +62,14 @@ export class HomeComponent implements OnInit {
         icon: 'pi pi-fw pi-dollar',
         items: [
           {
-            label: this.languageService.instant("New"),
-            icon: 'pi pi-fw pi-dollar'
+            label: this.languageService.instant("Expense.ManageRequest"),
+            icon: 'pi pi-fw pi-dollar',
+            "routerLink": 'expense-dashboard'
           },
           {
             label: this.languageService.instant("HomeMenu.ManagePayments"),
-            icon: 'pi pi-fw pi-list'
+            icon: 'pi pi-fw pi-list',
+            routerLink: 'expense-dashboard'
           }
         ]
       },

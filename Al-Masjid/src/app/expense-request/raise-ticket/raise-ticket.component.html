@@ -1,0 +1,22 @@
+<p-dialog header="{{'Receipts.AddNewReceipts' | translate}}" [(visible)]="show" [style]="{width: '30vw'}" [modal]="true" [baseZIndex]="10000"
+    [draggable]="false" [resizable]="true" [closeOnEscape]="false" [closable]="true" (onHide)="save(false)">
+
+    <ng-container [formGroup]="requestForm">
+        <div class="row">
+            <div class="col-12 mb-3">
+                <p class="p-b">{{'Notes' | translate}}</p>
+                <textarea type="text" rows="3" pInputText formControlName="note"><textarea></textarea>
+            </div>
+
+            <div class="col-12 mb-3">
+                <p class="p-b">{{'Amount' | translate}}</p>
+                <p-inputNumber mode="currency" class="w-100" currency="INR" formControlName="amount" inputId="Amount"
+                    locale="en-IN"></p-inputNumber>
+            </div>
+
+            <div class="col-4">
+                <button class="btn btn-block btn-primary" (click)="save(true)" [disabled]="!requestForm.valid">{{'Save' | translate }}</button>
+            </div>
+        </div>
+    </ng-container>
+</p-dialog>

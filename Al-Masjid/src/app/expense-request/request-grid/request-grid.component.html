@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="row">
+            <div class="col-10">
+                <div class="">
+                    <h3 class="tableTitle">{{'Expense.ManageRequestTitle' | translate}}</h3>
+                </div>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-info btn-block" (click)="showDialog()">+ {{'Expense.AddRequest' | translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-container *ngIf="OpenRequestDialog">
+    <app-raise-ticket (requestCreated)="event_request_created($event)"></app-raise-ticket>
+</ng-container>

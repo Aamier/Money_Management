@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { LanguageUtilService } from '../language-util.service';
 import { AuthService } from '../services/auth.service';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   items: MenuItem[];
   constructor(private formBuilder: FormBuilder, private authService: AuthService,
      private router: Router, private spinner: NgxSpinnerService, private messageService: MessageService,
-     private primengConfig: PrimeNGConfig, private translate: LanguageUtilService) { 
+     private primengConfig: PrimeNGConfig, private translate: LanguageUtilService, private storageService: StorageService) { 
        this.items = []
      }
 
@@ -28,6 +29,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     //sessionStorage.clear();
     this.primengConfig.ripple = true;
     this.initForm();
+    this.storageService.clearSession();
   }
 
   initForm() {

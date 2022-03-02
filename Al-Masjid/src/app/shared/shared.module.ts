@@ -14,6 +14,7 @@ import {TableModule} from 'primeng/table';
 import { SlideMenuModule } from 'primeng/slidemenu';
 import {DockModule} from 'primeng/dock';
 import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     ConfirmationDialogComponent,
@@ -45,7 +46,10 @@ import { TranslateModule } from '@ngx-translate/core';
     TableModule,
     SlideMenuModule,
     DockModule,
-    TranslateModule
+    TranslateModule,
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

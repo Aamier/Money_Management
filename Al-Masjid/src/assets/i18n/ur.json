@@ -1,0 +1,39 @@
+{
+    "welcomeMessage": "خوش آمدید",
+    "New": "نئی",
+    "Profile": "پروفائل",
+    "Quit": "چھوڑو",
+    "Name": "نام",
+    "Amount": "رقم",
+    "Notes": "نوٹس",
+    "Save": "محفوظ کریں۔",
+    "id": "آئی ڈی",
+    "Date": "تاریخ",
+    "Time": "وقت",
+    "Actions": "اعمال",
+    "login": {
+      "username": "صارف کا نام",
+      "password": "پاس ورڈز",
+      "submit": "جمع کرائیں"
+    },
+    "HomeMenu": {
+        "Receipts": "رسیدیں",
+        "ManageReceipts": "رسیدوں کا نظم کریں۔",
+        "Payments": "ادائیگیاں",
+        "ManagePayments": "انتظام کریں۔ ادائیگیاں",
+        "Ledger": "لیجر"
+    },
+    "Receipts": {
+        "AddNewReceipts": "نئی رسید شامل کریں۔",
+        "PayModeTitle": "ادائیگی کا موڈ منتخب کریں۔"
+    },
+    "ReceiptsGrid": {
+        "Title": "ادائیگیاں موصول ہوئیں"
+    },
+    "Expense": {
+        "NewRequest": "نئے اخراجات کی درخواست",
+        "ManageRequest": "درخواستوں کا نظم کریں۔",
+        "ManageRequestTitle": "اخراجات کی درخواست کی تفصیلات",
+        "AddRequest": "درخواست شامل کریں۔"
+    }
+  }

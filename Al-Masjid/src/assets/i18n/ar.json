@@ -29,5 +29,11 @@
     },
     "ReceiptsGrid": {
         "Title": "المدفوعات المستلمة"
+    },
+    "Expense": {
+        "NewRequest": "طلب مصاريف جديد",
+        "ManageRequest": "إدارة الطلبات",
+        "ManageRequestTitle": "تفاصيل طلب المصاريف",
+        "AddRequest": "إضافة طلب"
     }
   }

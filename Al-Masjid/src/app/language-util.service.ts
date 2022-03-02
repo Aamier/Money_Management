@@ -14,13 +14,13 @@ export class LanguageUtilService {
     debugger
     const lang = this.translate.currentLang;
     switch(lang) {
-      case 'ar':
+      case 'ur':
         this.storageService.setLocalstorage({key: 'lang', value: 'en'});
         this.translate.use('en');
         break;
       case 'en':
-        this.storageService.setLocalstorage({key: 'lang', value: 'ar'});
-        this.translate.use('ar');
+        this.storageService.setLocalstorage({key: 'lang', value: 'ur'});
+        this.translate.use('ur');
         break; 
     }
   }

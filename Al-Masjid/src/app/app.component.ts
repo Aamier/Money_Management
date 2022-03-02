@@ -10,7 +10,7 @@ import { LanguageUtilService } from './language-util.service';
 export class AppComponent implements OnInit{
   title = 'Al-Masjid';
   constructor(translate: TranslateService, private languageUtilService: LanguageUtilService) {
-    translate.addLangs(['en', 'ar']);
+    translate.addLangs(['en', 'ar', 'ur']);
     translate.setDefaultLang('en');
   }
 

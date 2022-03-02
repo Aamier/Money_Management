@@ -29,5 +29,11 @@
     },
     "ReceiptsGrid": {
         "Title": "Received Payments"
+    },
+    "Expense": {
+        "NewRequest": "New Expense Request",
+        "ManageRequest": "Manage Requests",
+        "ManageRequestTitle": "Expense Request Details",
+        "AddRequest": "Add Request"
     }
   }
