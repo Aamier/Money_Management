@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IConfirmationDialog } from 'src/app/Models/generalModel';
+import { IDialog } from 'src/app/Models/generalModel';
 
 @Component({
   selector: 'app-select-masjid',
@@ -7,7 +7,7 @@ import { IConfirmationDialog } from 'src/app/Models/generalModel';
   styleUrls: ['./select-masjid.component.scss']
 })
 export class SelectMasjidComponent implements OnInit {
-  @Input() dialogParams!: IConfirmationDialog;
+  @Input() dialogParams!: IDialog;
   constructor() { }
   ngOnInit(): void {
   }

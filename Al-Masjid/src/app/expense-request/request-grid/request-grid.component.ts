@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { IConfirmationDialog } from 'src/app/Models/generalModel';
 
 @Component({
   selector: 'app-request-grid',

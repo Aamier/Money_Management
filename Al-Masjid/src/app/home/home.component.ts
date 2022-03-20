@@ -6,7 +6,7 @@ import { MenuItem } from 'primeng/api';
 import { NEVER } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { LanguageUtilService } from '../language-util.service';
-import { IConfirmationDialog } from '../Models/generalModel';
+import { IDialog } from '../Models/generalModel';
 import { OrgService } from '../services/org.service';
 import { UserService } from '../services/user.service';
 
@@ -19,9 +19,11 @@ export class HomeComponent implements OnInit {
   message!: string;
   items!: MenuItem[];
   displayBasic = false;
-  confirmationDialogData!: IConfirmationDialog;
-  masjidDialogData!: IConfirmationDialog;
+  confirmationDialogData!: IDialog;
+  masjidDialogData!: IDialog;
+  bookletDialog!: IDialog;
   newReceipt = false;
+  newBooklet = false;
   userId!: string | null;
   constructor(private orgService: OrgService, private userService: UserService, private router: Router,private spinner: NgxSpinnerService, 
     private translate: LanguageUtilService, private languageService: TranslateService) { 
@@ -54,6 +56,18 @@ export class HomeComponent implements OnInit {
             label: this.languageService.instant("HomeMenu.ManageReceipts"),
             icon: 'pi pi-fw pi-list',
             routerLink: 'receipts'
+          },
+          {
+            label: this.languageService.instant("NewBooklet"),
+            icon: 'pi pi-fw pi-book',
+            command: (event) => {
+              this.bookletDialog = {
+                message: 'Create Receipts Booklet',
+                showDialog: true,
+                data: null
+              }
+              this.newBooklet = true;
+            }
           }
         ]
       },
@@ -119,6 +133,10 @@ export class HomeComponent implements OnInit {
 
   event_recieptSaved(value: boolean) {
     this.newReceipt = false;
+  }
+
+  event_createBooklet(value:boolean) {
+    this.newBooklet = false;
   }
 
   changeLanguage() {

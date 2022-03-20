@@ -26,6 +26,10 @@
 <ng-container *ngIf="newReceipt">
     <app-new-receipt (recieptSaved)="event_recieptSaved($event)"></app-new-receipt>
 </ng-container>
+
+<ng-container *ngIf="newBooklet">
+    <app-booklet (bookletSaved)="event_createBooklet($event)" [dialogParams]="bookletDialog"></app-booklet>
+</ng-container>
 <div class="mt-4">
     <router-outlet></router-outlet>
 </div>

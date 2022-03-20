@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IReceipt } from '../Models/generalModel';
+import { IBooklet, IReceipt } from '../Models/generalModel';
 import { ApiService } from './api-service';
 
 @Injectable({
@@ -17,5 +17,9 @@ export class ReceiptsService {
 
   getReceipts(): Observable<any> {
     return this.http.get<any>(this.apiService.RECEIPTS);
+  }
+
+  addBooklet(body: IBooklet) {
+    return this.http.post<any>(this.apiService.BOOKLET, body);
   }
 }

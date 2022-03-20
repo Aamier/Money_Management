@@ -11,6 +11,9 @@
     "Date": "تاریخ",
     "Time": "وقت",
     "Actions": "اعمال",
+    "BookNo": "کتابچہ نمبر",
+    "SlipNo": "رسید نمبر",
+    "Booklet": "کتابچہ",
     "login": {
       "username": "صارف کا نام",
       "password": "پاس ورڈز",

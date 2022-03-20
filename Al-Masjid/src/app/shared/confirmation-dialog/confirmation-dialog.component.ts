@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { IConfirmationDialog } from 'src/app/Models/generalModel';
+import { IDialog } from 'src/app/Models/generalModel';
 
 @Component({
   selector: 'app-confirmation-dialog',
@@ -7,7 +7,7 @@ import { IConfirmationDialog } from 'src/app/Models/generalModel';
   styleUrls: ['./confirmation-dialog.component.scss']
 })
 export class ConfirmationDialogComponent implements OnInit {
-  @Input() dialogParams!: IConfirmationDialog;
+  @Input() dialogParams!: IDialog;
   @Output() confirmationResult = new EventEmitter<boolean>();
   constructor() { }
 

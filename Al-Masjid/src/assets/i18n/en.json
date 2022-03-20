@@ -11,6 +11,10 @@
     "Date": "Date",
     "Time": "Time",
     "Actions": "Actions",
+    "BookNo": "Booklet Number",
+    "SlipNo": "Receipt Number",
+    "Booklet": "Booklet",
+    "NewBooklet": "New Booklet",
     "login": {
       "username": "User Name",
       "password": "Passwords",

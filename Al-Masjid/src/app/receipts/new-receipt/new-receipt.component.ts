@@ -15,6 +15,7 @@ export class NewReceiptComponent implements OnInit {
   @Output() recieptSaved = new EventEmitter();
   payModeData: any;
   payForm!: FormGroup;
+  today = new Date();
   constructor(private payModeService: PayModeService, 
     private formBuilder: FormBuilder,private spinner: NgxSpinnerService, private receiptService: ReceiptsService, private messageService: MessageService) { }
 
@@ -26,15 +27,18 @@ export class NewReceiptComponent implements OnInit {
   formInit() {
     this.payForm = this.formBuilder.group({
       id: [null],
-      name: ['', Validators.required],
+      receipt_no: [null, Validators.required],
       amount: [null, Validators.required],
+      paid_by: ['', Validators.required],
       created_on: [new Date()],
       updated_on: [null],
       payment_mode: [null, Validators.required],
-      received_by: [sessionStorage.getItem('userId')],
-      masjid: [sessionStorage.getItem('org'), Validators.required]
-
-    })
+      booklet: ['', Validators.required],
+      masjid: [sessionStorage.getItem('org'), Validators.required],
+      source: [null],
+      date: [null, Validators.required],
+      received_by: [sessionStorage.getItem('userId')]
+    });
   }
 
   save(value: boolean) {

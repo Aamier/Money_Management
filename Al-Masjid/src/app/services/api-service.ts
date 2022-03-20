@@ -15,4 +15,5 @@ export class ApiService {
   USER = environment.baseUrl + 'user';
   PAYMODES = environment.baseUrl + 'paymentmode';
   RECEIPTS = environment.baseUrl + 'receipt';
+  BOOKLET = environment.baseUrl + 'booklet'
 }

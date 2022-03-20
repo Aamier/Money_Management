@@ -8,7 +8,8 @@
                         <tr>
                             <th pSortableColumn="id">{{'id' | translate }} <p-sortIcon field="id"></p-sortIcon></th>
                             <th pSortableColumn="created_on">{{'Date' | translate }}<p-sortIcon field="created_on"></p-sortIcon></th>
-                            <th pSortableColumn="created_on">{{'Time' | translate }}<p-sortIcon field="created_on"></p-sortIcon></th>
+                            <th pSortableColumn="booklet">{{'BookNo' | translate }}<p-sortIcon field="booklet"></p-sortIcon></th>
+                            <th pSortableColumn="receipt_no">{{'SlipNo' | translate }}<p-sortIcon field="receipt_no"></p-sortIcon></th>
                             <th pSortableColumn="name">{{'Name' | translate }} <p-sortIcon field="name"></p-sortIcon></th>
                             <th>{{'Notes' | translate }}</th>
                             <th pSortableColumn="amount">{{'Amount' | translate }} <p-sortIcon field="amount"></p-sortIcon></th>
@@ -18,9 +19,10 @@
                     <ng-template pTemplate="body" let-product>
                         <tr>
                             <td>{{product.id}}</td>
-                            <td>{{product.created_on | date: 'dd-mm-yyyy'}}</td>
-                            <td>{{product.created_on | date: 'hh-mm-ss a'}}</td>
-                            <td>{{product.name}}</td>
+                            <td>{{product.created_on | date: 'dd-MM-yyyy'}}</td>
+                            <td>{{product.booklet }}</td>
+                            <td>{{product.receipt_no}}</td>
+                            <td>{{product.paid_by}}</td>
                             <td>NA</td>
                             <td>{{product.amount}}</td>
                             <td>

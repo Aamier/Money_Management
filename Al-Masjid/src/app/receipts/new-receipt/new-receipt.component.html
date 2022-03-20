@@ -2,16 +2,31 @@
     [draggable]="false" [resizable]="true" [closeOnEscape]="false" [closable]="true" (onHide)="save(false)">
 
     <ng-container [formGroup]="payForm">
-        <div class="row">
-            <div class="col-12 mb-3">
-                <p class="p-b">{{'Name' | translate}}</p>
-                <input type="text" pInputText formControlName="name" />
+        <div class="row"> 
+            <!-- {{payForm.value | json}} -->
+            <div class="col-6 mb-3">
+                <p class="p-b">{{'BookNo' | translate}}</p>
+                <input type="text" pInputText formControlName="booklet" />
+            </div>
+            <div class="col-6 mb-3">
+                <p class="p-b">{{'SlipNo' | translate}}</p>
+                <input type="text" pInputText formControlName="receipt_no" />
             </div>
 
             <div class="col-12 mb-3">
+                <p class="p-b">{{'Name' | translate}}</p>
+                <input type="text" pInputText formControlName="paid_by" />
+            </div>
+
+            <div class="col-6 mb-3">
                 <p class="p-b">{{'Amount' | translate}}</p>
                 <p-inputNumber mode="currency" class="w-100" currency="INR" formControlName="amount" inputId="Amount"
                     locale="en-IN"></p-inputNumber>
+            </div>
+
+            <div class="col-6 mb-3">
+                <p class="p-b">{{'Date' | translate}}</p>
+                <p-calendar appendTo="body" [maxDate]="today" formControlName="date"></p-calendar>
             </div>
 
             <div class="col-12 mb-3">

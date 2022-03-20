@@ -1,0 +1,13 @@
+<p-dialog header="Create Receipt Booklet" [(visible)]="dialogParams.showDialog" [style]="{width: '30vw'}" [modal]="true"  [baseZIndex]="10000"
+[draggable]="false" [resizable]="true" [closeOnEscape]="false" [closable]="true">
+
+<div class="row" [formGroup]="bookForm">
+    <div class="col-12 mb-3">
+        <p class="p-b">{{'BookNo' | translate}}</p>
+        <input type="text" pInputText formControlName="number" />
+    </div>
+    <div class="col-4">
+        <button class="btn btn-block btn-primary" [disabled]="!bookForm.valid" (click)="createBooklet()">{{'Save' | translate }}</button>
+    </div>
+</div>
+</p-dialog>

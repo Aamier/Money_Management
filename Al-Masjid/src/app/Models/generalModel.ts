@@ -1,4 +1,4 @@
-export interface IConfirmationDialog {
+export interface IDialog {
     message: string;
     showDialog: boolean;
     data?: any
@@ -16,4 +16,9 @@ export interface IReceipt {
 export interface IStorage {
     key: string,
     value: string
+}
+
+export interface IBooklet {
+    id: number;
+    number: number;
 }

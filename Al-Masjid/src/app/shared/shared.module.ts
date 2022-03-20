@@ -15,10 +15,13 @@ import { SlideMenuModule } from 'primeng/slidemenu';
 import {DockModule} from 'primeng/dock';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {CalendarModule} from 'primeng/calendar';
+import { BookletComponent } from './booklet/booklet.component';
 @NgModule({
   declarations: [
     ConfirmationDialogComponent,
-    SelectMasjidComponent
+    SelectMasjidComponent,
+    BookletComponent
   ],
   imports: [
     CommonModule,
@@ -30,7 +33,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     DropdownModule,
     InputNumberModule,
     InputTextModule,
-    TableModule
+    TableModule,
+    TranslateModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     RippleModule,
@@ -49,7 +55,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TranslateModule,
     FormsModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CalendarModule,
+    BookletComponent
   ]
 })
 export class SharedModule { }
