@@ -1,0 +1,39 @@
+{
+    "welcomeMessage": "مرحبا بعودتك!",
+    "New": "جديد",
+    "Profile": "حساب تعريفي",
+    "Quit": "مخرج",
+    "Name": "اسم",
+    "Amount": "مقدار",
+    "Notes": "ملاحظات",
+    "Save": "يحفظ",
+    "id": "هوية شخصية",
+        "Date": "تاريخ",
+        "Time": "زمن",
+        "Actions": "أجراءات",
+    "login": {
+      "username": "اسم االمستخدم",
+      "password": "كلمة المرور",
+      "submit": "يقدم"
+    },
+    "HomeMenu": {
+        "Receipts": "الإيصال",
+        "ManageReceipts": "إدارة الإيصالات",
+        "Payments": "المدفوعات",
+        "ManagePayments": "إدارة المدفوعات",
+        "Ledger": "موازنة"
+    },
+    "Receipts": {
+        "AddNewReceipts": "أضف إيصال جديد",
+        "PayModeTitle": "حدد وضع الدفع"
+    },
+    "ReceiptsGrid": {
+        "Title": "المدفوعات المستلمة"
+    },
+    "Expense": {
+        "NewRequest": "طلب مصاريف جديد",
+        "ManageRequest": "إدارة الطلبات",
+        "ManageRequestTitle": "تفاصيل طلب المصاريف",
+        "AddRequest": "إضافة طلب"
+    }
+  }

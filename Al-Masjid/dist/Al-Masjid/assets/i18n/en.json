@@ -1,0 +1,43 @@
+{
+    "welcomeMessage": "Welcome Back!",
+    "New": "New",
+    "Profile": "Profile",
+    "Quit": "Quit",
+    "Name": "Name",
+    "Amount": "Amount",
+    "Notes": "Notes",
+    "Save": "Save",
+    "id": "Id",
+    "Date": "Date",
+    "Time": "Time",
+    "Actions": "Actions",
+    "BookNo": "Booklet Number",
+    "SlipNo": "Receipt Number",
+    "Booklet": "Booklet",
+    "NewBooklet": "New Booklet",
+    "login": {
+      "username": "User Name",
+      "password": "Passwords",
+      "submit": "Submit"
+    },
+    "HomeMenu": {
+        "Receipts": "Receipts",
+        "ManageReceipts": "Manage Receipts",
+        "Payments": "Payments",
+        "ManagePayments": "Manage Payments",
+        "Ledger": "Ledger"
+    },
+    "Receipts": {
+        "AddNewReceipts": "Add New Receipt",
+        "PayModeTitle": "Select Payment Mode"
+    },
+    "ReceiptsGrid": {
+        "Title": "Received Payments"
+    },
+    "Expense": {
+        "NewRequest": "New Expense Request",
+        "ManageRequest": "Manage Requests",
+        "ManageRequestTitle": "Expense Request Details",
+        "AddRequest": "Add Request"
+    }
+  }
