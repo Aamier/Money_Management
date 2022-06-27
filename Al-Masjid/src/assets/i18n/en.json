@@ -25,7 +25,8 @@
         "ManageReceipts": "Manage Receipts",
         "Payments": "Payments",
         "ManagePayments": "Manage Payments",
-        "Ledger": "Ledger"
+        "Ledger": "Ledger",
+        "Booklet": "Booklets"
     },
     "Receipts": {
         "AddNewReceipts": "Add New Receipt",

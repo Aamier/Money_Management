@@ -17,6 +17,10 @@ const routes: Routes = [
       {
         path: 'expense-dashboard',
         loadChildren: () => import('./expense-request/expense-request.module').then(m => m.ExpenseRequestModule)
+      },
+      {
+        path: 'booklet-dashboard',
+        loadChildren: () => import('./booklet/booklet.module').then(m => m.BookletModule)
       }
     ]
   },

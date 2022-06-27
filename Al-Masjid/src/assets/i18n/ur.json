@@ -24,7 +24,8 @@
         "ManageReceipts": "رسیدوں کا نظم کریں۔",
         "Payments": "ادائیگیاں",
         "ManagePayments": "انتظام کریں۔ ادائیگیاں",
-        "Ledger": "لیجر"
+        "Ledger": "لیجر",
+        "Booklet": "کتابچے"
     },
     "Receipts": {
         "AddNewReceipts": "نئی رسید شامل کریں۔",

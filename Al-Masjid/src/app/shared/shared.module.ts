@@ -17,6 +17,9 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CalendarModule} from 'primeng/calendar';
 import { BookletComponent } from './booklet/booklet.component';
+import {MenuModule} from 'primeng/menu';
+import {TabMenuModule} from 'primeng/tabmenu';
+
 @NgModule({
   declarations: [
     ConfirmationDialogComponent,
@@ -27,6 +30,7 @@ import { BookletComponent } from './booklet/booklet.component';
     CommonModule,
     RippleModule,
     MenubarModule,
+    MenuModule,
     DialogModule,
     ButtonModule,
     ToastModule,
@@ -39,8 +43,11 @@ import { BookletComponent } from './booklet/booklet.component';
     ReactiveFormsModule
   ],
   exports: [
+    ReactiveFormsModule,
+    FormsModule,
     RippleModule,
     MenubarModule,
+    MenuModule,
     DialogModule,
     ButtonModule,
     ToastModule,
@@ -53,11 +60,11 @@ import { BookletComponent } from './booklet/booklet.component';
     SlideMenuModule,
     DockModule,
     TranslateModule,
-    FormsModule,
     CommonModule,
-    ReactiveFormsModule,
     CalendarModule,
-    BookletComponent
+    BookletComponent,
+    TabMenuModule
+    
   ]
 })
 export class SharedModule { }

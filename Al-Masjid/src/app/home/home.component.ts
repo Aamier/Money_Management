@@ -88,6 +88,11 @@ export class HomeComponent implements OnInit {
         ]
       },
       {
+        label: this.languageService.instant("HomeMenu.Booklet"),
+        icon: 'pi pi-fw pi-book',
+        routerLink: 'booklet-dashboard'
+      },
+      {
         label: this.languageService.instant("HomeMenu.Ledger"),
         icon: 'pi pi-fw pi-calendar',
       },

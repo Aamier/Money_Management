@@ -15,7 +15,7 @@ import { SharedModule } from './shared/shared.module';
 import { ReceiptsModule } from './receipts/receipts.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
+import { MenuModule } from 'primeng/menu';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
@@ -36,6 +36,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     NgxSpinnerModule,
     SharedModule,
     ReceiptsModule,
+    MenuModule,
     TranslateModule.forRoot(
       {
         loader: {
